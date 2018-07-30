@@ -2,9 +2,9 @@
 
 > Simple Blog App | A React-Redux Project | Author: [Alfe Caesar Lagas](http://alfecaesar.com)
 
-```
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-```
+
 
 
 ## Demo
