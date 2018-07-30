@@ -5,8 +5,7 @@ const addBlogFn = (state = [], action) => {
         ...state,
         {
           id: action.id,
-          blogtitle: action.btitle,
-          blogcontent: action.bcontent,
+          text: action.text,
           completed: false
         }
       ]

@@ -9,6 +9,11 @@ import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
+import { addBlog } from '../actions'
+
+
+
+
 export default class AddBlogContent extends React.Component {
   constructor(props) {
       super(props);
@@ -58,6 +63,7 @@ export default class AddBlogContent extends React.Component {
   }
 
   loginSubmit(e) {
+    let fields = this.state.fields;
     e.preventDefault();
 
     if (this.handleValidation()) {
@@ -66,7 +72,9 @@ export default class AddBlogContent extends React.Component {
       });
 
       // add blog here
-        alert('asd')
+      return (dispatch) => {
+        dispatch(addBlog(fields["blogtitle"]))
+      }
         
     } else {
       this.setState({
