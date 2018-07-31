@@ -75,6 +75,7 @@ class AddBlogContent extends React.Component {
           title: fields["blogtitle"],
           content: fields["blogcontent"]
       });
+    
         
       fields["blogtitle"] = '';
       fields["blogcontent"] = '';
