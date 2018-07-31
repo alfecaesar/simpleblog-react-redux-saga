@@ -14,6 +14,7 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
+
 render(
   <Provider store={store}>
     <BrowserRouter><App /></BrowserRouter>

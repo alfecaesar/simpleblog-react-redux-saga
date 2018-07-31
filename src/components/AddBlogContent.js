@@ -9,12 +9,11 @@ import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
-import { addBlog } from '../actions'
+import { addBlog } from '../actions';
+import { connect } from 'react-redux'
 
 
-
-
-export default class AddBlogContent extends React.Component {
+class AddBlogContent extends React.Component {
   constructor(props) {
       super(props);
       
@@ -72,9 +71,14 @@ export default class AddBlogContent extends React.Component {
       });
 
       // add blog here
-      return (dispatch) => {
-        dispatch(addBlog(fields["blogtitle"]))
-      }
+      this.props.addBlog({
+          title: fields["blogtitle"],
+          content: fields["blogcontent"]
+      });
+        
+      fields["blogtitle"] = '';
+      fields["blogcontent"] = '';
+
         
     } else {
       this.setState({
@@ -179,3 +183,5 @@ export default class AddBlogContent extends React.Component {
       );
   }
 }
+
+export default connect(null, {addBlog})(AddBlogContent)

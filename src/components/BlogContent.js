@@ -4,28 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-
 import BlogItem from './BlogItem';
-
-
-const blogList = ({ addBlogFn }) => (
-  <ul>
-    {addBlogFn.map(blogItem =>
-      <BlogItem
-        key={blogItem.id}
-        {...blogItem}
-      />
-    )}
-  </ul> 
-)
-
-blogList.propTypes  = {
-  addBlogFn: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    completed: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired
-}
 
 
 const styles = theme => ({
@@ -96,9 +75,7 @@ function BlogContent(props) {
           </Paper>
         </Grid>
       </Grid>
-      
-      
-      <blogList />
+      <BlogItem />
     </div>
   );
 }
