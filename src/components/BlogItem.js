@@ -1,20 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {connect} from 'react-redux';
 
-
-
-const BlogItem = ({addBlogFn}) => (
-    <ul>
-        <li>asd</li>
-    </ul> 
-)
-
-BlogItem.propTypes  = {
-  addBlogFn: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    completed: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired
+class BlogItem extends React.Component {
+    /*
+    constructor(){
+        super(props)
+    }
+    
+    render(){
+        return(
+            {blogItem}
+        )
+    }
+    */
 }
 
-export default BlogItem
+const mapStateToProps = (state) => ({
+     blogItem: state.addBlogFn
+})
+
+export default connect(mapStateToProps)(BlogItem);

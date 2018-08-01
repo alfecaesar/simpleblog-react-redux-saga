@@ -75,7 +75,7 @@ function BlogContent(props) {
           </Paper>
         </Grid>
       </Grid>
-      <BlogItem />
+     
     </div>
   );
 }
